@@ -12,7 +12,9 @@ class Register extends Component
     public $email ="";
     public $password ="";
     public $confirmPassword ="";
+    public $saved =false;
 
+    
     public function updatedEmail(){
         $this->validate([
             'email' =>'unique:users'
@@ -41,7 +43,8 @@ class Register extends Component
             'email' =>$this->email,
             'password' => Hash::make($this->password)
         ]);
-        return redirect()->route('home');
+        $this->saved =true;
+//        return redirect()->route('home');
     }
     public function render()
     {

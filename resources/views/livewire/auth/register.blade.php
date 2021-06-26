@@ -3,6 +3,11 @@
         <div class="col-md-6">
             <h4 style="color: green;">Registration Form</h4>
             <form wire:submit.prevent="register">
+                @if($saved)
+                <div class="alert alert-success" role="alert">
+                    Successfully Registred !
+                </div>
+                @endif
                 <div class="form-group">
                     <label for="validationServer03">Full Name</label>
                     <input wire:model="name" type="text" class="form-control" id="validationServer03" aria-describedby="emailHelp" placeholder="Enter Full Name">
