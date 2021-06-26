@@ -21,14 +21,14 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Password</label>
-                    <input wire:model="password" type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="****">
+                    <input wire:model.debounce.500ms="password" type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="****">
                     @error('password')
                     <span style="color:red;">{{ $message }}</span>
                     @enderror
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Password Confirmation</label>
-                    <input wire:model="confirmPassword"  type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="****">
+                    <input wire:model.lazy="confirmPassword"  type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="****">
                     @error('password')
                     <span style="color:red;">{{ $message }}</span>
                     @enderror
